@@ -1,0 +1,22 @@
+{
+  "/_not-found/page": "app/_not-found/page.js",
+  "/adoption/page": "app/adoption/page.js",
+  "/dashboard/page": "app/dashboard/page.js",
+  "/community/page": "app/community/page.js",
+  "/chatbot/page": "app/chatbot/page.js",
+  "/allergy-scan/page": "app/allergy-scan/page.js",
+  "/matchmaking/page": "app/matchmaking/page.js",
+  "/gps/page": "app/gps/page.js",
+  "/page": "app/page.js",
+  "/explore/page": "app/explore/page.js",
+  "/records/page": "app/records/page.js",
+  "/sos/page": "app/sos/page.js",
+  "/pricing/page": "app/pricing/page.js",
+  "/pet-health-scan/page": "app/pet-health-scan/page.js",
+  "/services/page": "app/services/page.js",
+  "/settings/page": "app/settings/page.js",
+  "/login/page": "app/login/page.js",
+  "/signup/page": "app/signup/page.js",
+  "/api/analyze-image/route": "app/api/analyze-image/route.js",
+  "/api/match-pets/route": "app/api/match-pets/route.js"
+}

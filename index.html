@@ -1,0 +1,823 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+ <meta name="pawlife-api-base" content="http://localhost:8080/api" />
+  <title>PawLife – Smart Pet Care Platform</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+</head>
+<body>
+
+<!-- ═══════════════════════════════════════════
+     SECTION 1: LANDING PAGE
+═══════════════════════════════════════════ -->
+<div id="landing-page" class="page active">
+
+  <!-- Sticky Navbar -->
+  <nav class="navbar">
+    <div class="nav-logo">
+      <span class="paw-icon">🐾</span>
+      <span>PawLife</span>
+    </div>
+    <ul class="nav-links">
+      <li><a href="#features">Features</a></li>
+      <li><a href="#how-to-use">How to Use</a></li>
+      <li><a href="#about">About</a></li>
+    </ul>
+    <button class="btn-nav" onclick="showPage('auth-page')">Get Started</button>
+    <button class="hamburger" id="hamburger"><i class="fas fa-bars"></i></button>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero" id="hero">
+    <div class="hero-blob blob-1"></div>
+    <div class="hero-blob blob-2"></div>
+    <div class="hero-content">
+      <div class="hero-badge">🌿 The #1 Pet Care Platform</div>
+      <h1 class="hero-title">Smart Pet Care<br /><em>Platform</em></h1>
+      <p class="hero-caption">Track, Manage and Care for Your Pets Easily</p>
+      <p class="hero-intro">
+        Everything your pet needs — all in one place. From intelligent diet planning
+        and instant vet consultations to real-time health tracking and emergency AI support.
+        Because your pet deserves the best life possible.
+      </p>
+      <div class="hero-cta">
+        <button class="btn-primary" onclick="showPage('auth-page')">
+          <i class="fas fa-paw"></i> Start Free Today
+        </button>
+        <button class="btn-ghost" onclick="scrollToSection('features')">
+          See Features <i class="fas fa-arrow-down"></i>
+        </button>
+      </div>
+      <div class="hero-stats">
+        <div class="stat"><span>12K+</span><small>Happy Pets</small></div>
+        <div class="stat-divider"></div>
+        <div class="stat"><span>98%</span><small>Satisfaction</small></div>
+        <div class="stat-divider"></div>
+        <div class="stat"><span>24/7</span><small>AI Support</small></div>
+      </div>
+    </div>
+    <div class="hero-visual">
+      <div class="hero-card-float card-float-1">
+        <i class="fas fa-heartbeat"></i>
+        <span>Health Tracked</span>
+      </div>
+      <div class="hero-card-float card-float-2">
+        <i class="fas fa-bowl-food"></i>
+        <span>Diet Planned</span>
+      </div>
+      <div class="hero-card-float card-float-3">
+        <i class="fas fa-robot"></i>
+        <span>AI Ready</span>
+      </div>
+      <div class="dog-illustration">
+        <div class="dog-circle">
+          <span class="dog-emoji">🐕</span>
+        </div>
+        <div class="dog-ring ring-1"></div>
+        <div class="dog-ring ring-2"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Features Section -->
+  <section class="features-section" id="features">
+    <div class="section-header reveal">
+      <span class="section-tag">What We Offer</span>
+      <h2>Everything Your Pet Needs</h2>
+      <p>Four powerful features working together for your pet's wellbeing</p>
+    </div>
+    <div class="features-grid">
+      <div class="feature-card reveal" style="--delay:0.1s">
+        <div class="feature-icon" style="--ico-color:#e07b39;">
+          <i class="fas fa-heartbeat"></i>
+        </div>
+        <h3>Pet Health Tracking</h3>
+        <p>Monitor your pet's weight, vaccinations, vet visits and daily health metrics in real time. Get alerts before issues become problems.</p>
+        <ul class="feature-list">
+          <li><i class="fas fa-check"></i> Daily vitals log</li>
+          <li><i class="fas fa-check"></i> Vaccination reminders</li>
+          <li><i class="fas fa-check"></i> Weight trend charts</li>
+        </ul>
+      </div>
+      <div class="feature-card reveal" style="--delay:0.2s">
+        <div class="feature-icon" style="--ico-color:#4aab72;">
+          <i class="fas fa-bowl-food"></i>
+        </div>
+        <h3>Smart Diet Planning</h3>
+        <p>Get personalized meal plans based on your pet's species, breed, age, weight and health conditions. Nutrition made simple.</p>
+        <ul class="feature-list">
+          <li><i class="fas fa-check"></i> Breed-specific meals</li>
+          <li><i class="fas fa-check"></i> Calorie tracking</li>
+          <li><i class="fas fa-check"></i> Weekly plan generator</li>
+        </ul>
+      </div>
+      <div class="feature-card reveal" style="--delay:0.3s">
+        <div class="feature-icon" style="--ico-color:#5b8def;">
+          <i class="fas fa-user-doctor"></i>
+        </div>
+        <h3>Doctor Consultation</h3>
+        <p>Connect with licensed veterinarians from the comfort of home. Book appointments or chat instantly when you need expert advice.</p>
+        <ul class="feature-list">
+          <li><i class="fas fa-check"></i> Book appointments</li>
+          <li><i class="fas fa-check"></i> Video consultations</li>
+          <li><i class="fas fa-check"></i> Prescription history</li>
+        </ul>
+      </div>
+      <div class="feature-card reveal" style="--delay:0.4s">
+        <div class="feature-icon" style="--ico-color:#e05c5c;">
+          <i class="fas fa-robot"></i>
+        </div>
+        <h3>Emergency AI Chatbot</h3>
+        <p>Powered by Gemini AI — get instant answers to urgent health questions 24/7. Your pet's emergency line, always available.</p>
+        <ul class="feature-list">
+          <li><i class="fas fa-check"></i> 24/7 availability</li>
+          <li><i class="fas fa-check"></i> Symptom analysis</li>
+          <li><i class="fas fa-check"></i> Gemini AI powered</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- How to Use Section -->
+  <section class="how-section" id="how-to-use">
+    <div class="how-bg-shape"></div>
+    <div class="section-header reveal">
+      <span class="section-tag">Simple Setup</span>
+      <h2>How to Use PawLife</h2>
+      <p>Three easy steps to get your pet care dashboard running</p>
+    </div>
+    <div class="steps-container">
+      <div class="step-card reveal" style="--delay:0.1s">
+        <div class="step-number">01</div>
+        <div class="step-icon"><i class="fas fa-user-plus"></i></div>
+        <h3>Sign Up Your Pet</h3>
+        <p>Create a free account and register your pet profile — name, pet type, breed, birthday, gender and weight. It takes under 2 minutes.</p>
+        <div class="step-arrow"><i class="fas fa-arrow-right"></i></div>
+      </div>
+      <div class="step-card reveal" style="--delay:0.2s">
+        <div class="step-number">02</div>
+        <div class="step-icon"><i class="fas fa-clipboard-list"></i></div>
+        <h3>Add All Details</h3>
+        <p>Upload your pet's photo, fill in health history and set preferences. The more you add, the smarter your personalised recommendations.</p>
+        <div class="step-arrow"><i class="fas fa-arrow-right"></i></div>
+      </div>
+      <div class="step-card reveal" style="--delay:0.3s">
+        <div class="step-number">03</div>
+        <div class="step-icon"><i class="fas fa-gauge-high"></i></div>
+        <h3>Access Dashboard</h3>
+        <p>Your full care dashboard is ready. Track health, plan meals, consult vets and use the emergency chatbot — everything in one place.</p>
+      </div>
+    </div>
+    <div class="cta-center reveal">
+      <button class="btn-primary large" onclick="showPage('auth-page')">
+        <i class="fas fa-paw"></i> Create Your Free Account
+      </button>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section class="about-section" id="about">
+    <div class="about-inner reveal">
+      <div class="about-text">
+        <span class="section-tag">About PawLife</span>
+        <h2>Built by Pet Lovers,<br/>for Pet Lovers</h2>
+        <p>PawLife was created because we believe every pet deserves smart, proactive care — not just reactive vet visits. Our platform combines modern technology with genuine love for pets to give you the tools to be the best pet parent possible.</p>
+        <p>From tracking daily health metrics to getting instant AI-powered guidance during emergencies, PawLife is your always-available partner in your pet's health journey.</p>
+        <div class="about-badges">
+          <span>🏆 Trusted by 12,000+ owners</span>
+          <span>🔒 Privacy first</span>
+          <span>🤖 AI powered</span>
+        </div>
+      </div>
+      <div class="about-visual">
+        <div class="about-card a-card-1">
+          <i class="fas fa-shield-dog"></i>
+          <div>
+            <strong>Vet Approved</strong>
+            <small>All health data reviewed by professionals</small>
+          </div>
+        </div>
+        <div class="about-card a-card-2">
+          <i class="fas fa-brain"></i>
+          <div>
+            <strong>AI Powered</strong>
+            <small>Gemini AI for instant emergency help</small>
+          </div>
+        </div>
+        <div class="about-card a-card-3">
+          <i class="fas fa-leaf"></i>
+          <div>
+            <strong>Natural Care</strong>
+            <small>Holistic approach to pet wellness</small>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="footer-logo">
+        <span class="paw-icon">🐾</span> PawLife
+        <p>Smart pet care for the modern pet parent.</p>
+      </div>
+      <div class="footer-links">
+        <h4>Platform</h4>
+        <a href="#">Features</a>
+        <a href="#">Pricing</a>
+        <a href="#">Blog</a>
+      </div>
+      <div class="footer-links">
+        <h4>Support</h4>
+        <a href="#">Help Center</a>
+        <a href="#">Contact Us</a>
+        <a href="#">Privacy Policy</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>©️ 2025 PawLife. Made with 🐾 for pets everywhere.</p>
+    </div>
+  </footer>
+</div>
+
+
+<!-- ═══════════════════════════════════════════
+     SECTION 2: AUTH PAGE (LOGIN / SIGNUP)
+═══════════════════════════════════════════ -->
+<div id="auth-page" class="page">
+  <div class="auth-container">
+    <div class="auth-left">
+      <button class="back-btn" onclick="showPage('landing-page')">
+        <i class="fas fa-arrow-left"></i> Back to Home
+      </button>
+      <div class="auth-left-content">
+        <div class="auth-logo"><span>🐾</span> PawLife</div>
+        <h2>Your Pet's Digital Home</h2>
+        <p>Register your pup and unlock smart health tracking, personalised diet plans, vet consultations and 24/7 AI emergency support.</p>
+        <div class="auth-perks">
+          <div class="perk"><i class="fas fa-check-circle"></i> Free forever plan</div>
+          <div class="perk"><i class="fas fa-check-circle"></i> No credit card needed</div>
+          <div class="perk"><i class="fas fa-check-circle"></i> Add multiple pets</div>
+          <div class="perk"><i class="fas fa-check-circle"></i> AI emergency chatbot</div>
+        </div>
+        <div class="auth-illustration">🐶</div>
+      </div>
+    </div>
+    <div class="auth-right">
+      <div class="auth-tabs">
+        <button class="auth-tab active" id="tab-signup" onclick="switchTab('signup')">Sign Up</button>
+        <button class="auth-tab" id="tab-login" onclick="switchTab('login')">Login</button>
+      </div>
+
+      <!-- Signup Form (account only — add pets from dashboard or modal) -->
+      <div class="auth-form active" id="form-signup">
+        <h3>Create your account</h3>
+        <p class="form-sub">Sign up with your email. You can add pets after signing in.</p>
+
+        <div class="form-grid">
+          <div class="form-group full-width">
+            <label><i class="fas fa-user"></i> Your name</label>
+            <input type="text" id="signup-name" placeholder="Your name" autocomplete="name" />
+          </div>
+          <div class="form-group full-width">
+            <label><i class="fas fa-envelope"></i> Email</label>
+            <input type="email" id="signup-email" placeholder="you@email.com" autocomplete="email" />
+          </div>
+          <div class="form-group full-width">
+            <label><i class="fas fa-lock"></i> Password</label>
+            <div class="password-wrap">
+              <input type="password" placeholder="At least 6 characters" id="signup-pass" autocomplete="new-password" />
+              <button type="button" onclick="togglePass('signup-pass', this)"><i class="fas fa-eye"></i></button>
+            </div>
+          </div>
+        </div>
+
+        <button type="button" class="btn-submit" onclick="apiSignup()">
+          <i class="fas fa-paw"></i> Create account
+        </button>
+        <p class="form-switch">Already have an account? <a onclick="switchTab('login')">Login here</a></p>
+      </div>
+
+      <!-- Login Form -->
+      <div class="auth-form" id="form-login">
+        <h3>Welcome Back!</h3>
+        <p class="form-sub">Login to access your pet dashboard 🏠</p>
+        <div class="form-group">
+          <label><i class="fas fa-envelope"></i> Email</label>
+          <input type="email" id="login-email" placeholder="you@email.com" autocomplete="email" />
+        </div>
+        <div class="form-group">
+          <label><i class="fas fa-lock"></i> Password</label>
+          <div class="password-wrap">
+            <input type="password" placeholder="Your password" id="login-pass" />
+            <button type="button" onclick="togglePass('login-pass', this)"><i class="fas fa-eye"></i></button>
+          </div>
+        </div>
+        <div class="login-extras">
+          <label class="remember-me"><input type="checkbox" /> Remember me</label>
+          <a href="#">Forgot Password?</a>
+        </div>
+        <button type="button" class="btn-submit" onclick="apiLogin()">
+          <i class="fas fa-arrow-right-to-bracket"></i> Login
+        </button>
+        <p class="form-switch">New here? <a onclick="switchTab('signup')">Create a free account</a></p>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- ═══════════════════════════════════════════
+     SECTION 3: DASHBOARD PAGE
+═══════════════════════════════════════════ -->
+<div id="dashboard-page" class="page">
+  <div class="dashboard-wrapper">
+
+    <!-- Sidebar -->
+    <aside class="sidebar" id="sidebar">
+      <div class="sidebar-logo">
+        <span>🐾</span> PawLife
+      </div>
+      <div class="dog-profile-mini">
+        <div class="mini-avatar">🐕</div>
+        <div>
+          <strong>Your pet</strong>
+          <small>Species & age load from your account</small>
+        </div>
+      </div>
+      <nav class="sidebar-nav">
+        <a href="#" class="nav-item active" onclick="showSection('add-pets', this)">
+          <i class="fas fa-plus-circle"></i>
+          <span>Add Pets</span>
+        </a>
+        <a href="#" class="nav-item" onclick="showSection('diet-plan', this)">
+          <i class="fas fa-bowl-food"></i>
+          <span>Diet Plan</span>
+        </a>
+        <a href="#" class="nav-item" onclick="showSection('subscription', this)">
+          <i class="fas fa-crown"></i>
+          <span>Subscription</span>
+        </a>
+        <a href="#" class="nav-item" onclick="showSection('petmates', this)">
+          <i class="fas fa-heart"></i>
+          <span>PetMates</span>
+        </a>
+        <a href="#" class="nav-item" onclick="showSection('doctor', this)">
+          <i class="fas fa-user-doctor"></i>
+          <span>Doctor Consultation</span>
+        </a>
+        <a href="#" class="nav-item" onclick="showSection('emergency', this)">
+          <i class="fas fa-robot"></i>
+          <span>Emergency AI Chat</span>
+          <span class="nav-badge">AI</span>
+        </a>
+      </nav>
+      <div class="sidebar-bottom">
+        <a href="#" class="nav-item" onclick="showPage('landing-page')">
+          <i class="fas fa-arrow-left"></i>
+          <span>Back to Home</span>
+        </a>
+        <a href="#" class="nav-item danger" onclick="apiLogout(); return false;">
+          <i class="fas fa-right-from-bracket"></i>
+          <span>Logout</span>
+        </a>
+      </div>
+    </aside>
+
+    <!-- Mobile Topbar -->
+    <div class="mobile-topbar">
+      <button onclick="toggleSidebar()"><i class="fas fa-bars"></i></button>
+      <span>🐾 PawLife</span>
+      <div class="mini-avatar small">🐕</div>
+    </div>
+
+    <!-- Main Content -->
+    <main class="dashboard-main">
+
+      <!-- Top Header Bar -->
+      <div class="dash-header">
+        <div>
+          <h2 id="section-title">My Pets</h2>
+          <p id="section-sub">Manage your registered pets</p>
+        </div>
+        <div class="dash-header-right">
+          <div class="notif-wrap" id="notif-wrap">
+            <div class="notif-btn" id="notif-btn" role="button" tabindex="0" aria-expanded="false" aria-label="Notifications"><i class="fas fa-bell"></i><span class="notif-dot"></span></div>
+            <div class="notif-panel" id="notif-panel" hidden></div>
+          </div>
+          <div class="user-chip">
+            <div class="user-avatar">🐕</div>
+            <span>Account</span>
+            <span id="plan-chip-badge" class="nav-badge" style="display:none;margin-left:6px;"></span>
+          </div>
+        </div>
+      </div>
+
+      <!-- ── ADD PETS SECTION ── -->
+      <div class="dash-section active" id="sec-add-pets">
+        <div class="dash-cards-row">
+          <div class="info-card ic-orange">
+            <i class="fas fa-paw"></i>
+            <div><strong>—</strong><small>Pets Registered</small></div>
+          </div>
+          <div class="info-card ic-green">
+            <i class="fas fa-heart"></i>
+            <div><strong>Healthy</strong><small>Overall Status</small></div>
+          </div>
+          <div class="info-card ic-blue">
+            <i class="fas fa-syringe"></i>
+            <div><strong>Up to date</strong><small>Vaccinations</small></div>
+          </div>
+          <div class="info-card ic-red">
+            <i class="fas fa-weight-scale"></i>
+            <div><strong>—</strong><small>Current Weight</small></div>
+          </div>
+        </div>
+
+        <div class="section-panel">
+          <div class="panel-header">
+            <h3>Registered Pets</h3>
+            <button class="btn-add" onclick="openModal('add-pet-modal')">
+              <i class="fas fa-plus"></i> Add New Pet
+            </button>
+          </div>
+          <div class="pets-grid">
+            <div class="pet-card" style="grid-column: 1 / -1;">
+              <p class="text-sm" style="opacity:0.85;margin:0 0 8px 0;">Pets and diet load from the live dashboard (Next.js app) connected to the API — this static page is layout-only.</p>
+              <p class="text-sm" style="opacity:0.75;margin:0;">Add pets, diet plans, and notifications in the authenticated web app.</p>
+            </div>
+            <div class="pet-card add-new-card" onclick="openModal('add-pet-modal')">
+              <i class="fas fa-plus-circle"></i>
+              <p>Add a pet</p>
+            </div>
+          </div>
+        </div>
+        <div class="section-panel" style="margin-top:24px;">
+          <div class="panel-header">
+            <h3>Health insights</h3>
+          </div>
+          <div id="health-insights-body">
+            <p class="text-sm" style="opacity:0.85;margin:0;">Loading…</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- ── DIET PLAN SECTION ── -->
+      <div class="dash-section" id="sec-diet-plan">
+        <div class="dash-cards-row">
+          <div class="info-card ic-green">
+            <i class="fas fa-fire"></i>
+            <div><strong>—</strong><small>Daily Calories</small></div>
+          </div>
+          <div class="info-card ic-orange">
+            <i class="fas fa-drumstick-bite"></i>
+            <div><strong>28%</strong><small>Protein</small></div>
+          </div>
+          <div class="info-card ic-blue">
+            <i class="fas fa-seedling"></i>
+            <div><strong>40%</strong><small>Carbs</small></div>
+          </div>
+          <div class="info-card ic-red">
+            <i class="fas fa-droplet"></i>
+            <div><strong>—</strong><small>Water/Day</small></div>
+          </div>
+        </div>
+
+        <div class="section-panel">
+          <div class="panel-header">
+            <h3>Weekly diet plan</h3>
+            <button type="button" class="btn-add" onclick="openCustomizeDietModal()"><i class="fas fa-sliders"></i> Customize</button>
+          </div>
+          <div class="diet-table-wrap">
+            <table class="diet-table">
+              <thead>
+                <tr>
+                  <th>Day</th>
+                  <th>🌅 Morning</th>
+                  <th>☀️ Afternoon</th>
+                  <th>🌙 Evening</th>
+                  <th>Calories</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr><td colspan="5" style="text-align:center;padding:24px;opacity:0.85;">Meals populate per pet from the API after you sign in on the web dashboard.</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="diet-note">
+            <i class="fas fa-circle-info"></i>
+            <span>Default plans are generated from species, breed, age, and weight for each pet. Customize on Pro+ in the live app.</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- ── SUBSCRIPTION SECTION ── -->
+      <div class="dash-section" id="sec-subscription">
+        <div class="section-panel">
+          <div class="panel-header">
+            <h3>Your plan</h3>
+          </div>
+          <p class="text-sm" style="opacity:0.9;margin:0 0 16px;">Current plan: <strong id="sub-current-plan">Free</strong> · Demo renews: <strong id="sub-expiry-date">—</strong></p>
+          <p class="text-sm" style="opacity:0.8;margin:0 0 20px;">This is a local demo — no payment, no server. Pick a plan to unlock features in your browser.</p>
+          <div class="sub-plans-grid">
+            <div class="section-panel sub-plan-card" data-plan-row="free">
+              <h4>Free</h4>
+              <ul class="text-sm sub-plan-list">
+                <li>Up to 2 pets</li>
+                <li>Default diet</li>
+                <li>Notifications</li>
+                <li>Vaccination support</li>
+                <li>Basic dashboard</li>
+              </ul>
+              <button type="button" class="btn-submit" style="margin-top:12px;" onclick="setSubscriptionPlan('free')">Use Free</button>
+            </div>
+            <div class="section-panel sub-plan-card" data-plan-row="pro">
+              <h4>Pro</h4>
+              <ul class="text-sm sub-plan-list">
+                <li>More pets (demo cap)</li>
+                <li>Customize diet</li>
+                <li>Better notifications</li>
+                <li>Vaccination reminders</li>
+                <li>PetMates requests</li>
+              </ul>
+              <button type="button" class="btn-add" style="margin-top:12px;" onclick="setSubscriptionPlan('pro')">Upgrade to Pro (demo)</button>
+            </div>
+            <div class="section-panel sub-plan-card" data-plan-row="elite">
+              <h4>Elite</h4>
+              <ul class="text-sm sub-plan-list">
+                <li>Advanced diet notes</li>
+                <li>Premium notifications</li>
+                <li>Health insights</li>
+                <li>Full PetMates + filters</li>
+                <li>Priority booking badge</li>
+              </ul>
+              <button type="button" class="btn-add" style="margin-top:12px;" onclick="setSubscriptionPlan('elite')">Upgrade to Elite (demo)</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ── PETMATES SECTION ── -->
+      <div class="dash-section" id="sec-petmates">
+        <div class="section-panel">
+          <div class="panel-header">
+            <h3>PetMates</h3>
+          </div>
+          <p class="text-sm" style="opacity:0.85;margin:0 0 16px;">Responsible local matching demo. Exact addresses are never shown — city area only.</p>
+          <div class="pm-mode-row">
+            <button type="button" class="btn-submit pm-mode-btn active" data-pm-mode="breeding" onclick="setPetmatesMode('breeding')">Breeding match</button>
+            <button type="button" class="btn-submit pm-mode-btn" data-pm-mode="companion" onclick="setPetmatesMode('companion')">Companion</button>
+            <button type="button" class="btn-submit pm-mode-btn" data-pm-mode="playdate" onclick="setPetmatesMode('playdate')">Playdate</button>
+          </div>
+          <div class="form-group" style="margin-top:16px;">
+            <label>City filter (optional)</label>
+            <input type="text" id="pm-filter-city" placeholder="e.g. Mumbai" oninput="renderPetMatesPage()" />
+          </div>
+          <div class="pm-adv-filters pm-elite-only" style="margin-top:12px;">
+            <label class="text-sm" style="display:flex;align-items:center;gap:8px;margin-bottom:8px;"><input type="checkbox" id="pm-filter-breed-strict" onchange="renderPetMatesPage()" /> Same breed only (Elite)</label>
+            <label class="text-sm" style="display:flex;align-items:center;gap:8px;"><input type="checkbox" id="pm-filter-vax-only" onchange="renderPetMatesPage()" /> Vaccination verified only (Elite)</label>
+          </div>
+          <p id="pm-elite-teaser" class="text-sm pm-hidden" style="margin-top:10px;opacity:0.85;">Elite adds advanced filters and unlimited PetMates requests in this demo.</p>
+          <div id="pm-warnings" style="display:none;margin-top:12px;"></div>
+          <div id="pm-readiness" style="margin-top:12px;"></div>
+          <h4 class="text-sm" style="margin:22px 0 10px;">Matches</h4>
+          <div id="petmates-results"></div>
+          <h4 class="text-sm" style="margin:28px 0 10px;">Your requests</h4>
+          <div id="petmates-requests-list"></div>
+        </div>
+      </div>
+
+      <!-- ── DOCTOR CONSULTATION SECTION ── -->
+      <div class="dash-section" id="sec-doctor">
+        <div class="section-panel">
+          <div class="panel-header">
+            <h3>Available Veterinarians</h3>
+            <div class="search-bar">
+              <i class="fas fa-search"></i>
+              <input type="text" placeholder="Search doctors..." />
+            </div>
+          </div>
+          <div class="doctors-grid">
+            <div class="doctor-card">
+              <div class="doc-avatar">👩‍⚕️</div>
+              <div class="doc-info">
+                <h4>Dr. Sarah Mehta <span id="doctor-priority-badge" class="nav-badge" style="display:none;">Priority</span></h4>
+                <span class="doc-specialty">General Vet · Surgeon</span>
+                <div class="doc-rating"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i> <span>5.0</span></div>
+                <div class="doc-slots">
+                  <span class="slot available">10:00 AM</span>
+                  <span class="slot available">2:00 PM</span>
+                  <span class="slot booked">4:30 PM</span>
+                </div>
+              </div>
+              <button class="btn-book" onclick="openModal('book-modal')">Book</button>
+            </div>
+            <div class="doctor-card">
+              <div class="doc-avatar">👨‍⚕️</div>
+              <div class="doc-info">
+                <h4>Dr. Rahul Nair</h4>
+                <span class="doc-specialty">Dermatology · Nutrition</span>
+                <div class="doc-rating"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-stroke"></i> <span>4.5</span></div>
+                <div class="doc-slots">
+                  <span class="slot booked">9:00 AM</span>
+                  <span class="slot available">11:30 AM</span>
+                  <span class="slot available">3:00 PM</span>
+                </div>
+              </div>
+              <button class="btn-book" onclick="openModal('book-modal')">Book</button>
+            </div>
+            <div class="doctor-card">
+              <div class="doc-avatar">👩‍⚕️</div>
+              <div class="doc-info">
+                <h4>Dr. Priya Sharma</h4>
+                <span class="doc-specialty">Orthopedics · Rehab</span>
+                <div class="doc-rating"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i> <span>4.9</span></div>
+                <div class="doc-slots">
+                  <span class="slot available">8:00 AM</span>
+                  <span class="slot available">1:00 PM</span>
+                  <span class="slot booked">5:00 PM</span>
+                </div>
+              </div>
+              <button class="btn-book" onclick="openModal('book-modal')">Book</button>
+            </div>
+            <div class="doctor-card">
+              <div class="doc-avatar">👨‍⚕️</div>
+              <div class="doc-info">
+                <h4>Dr. Arjun Desai</h4>
+                <span class="doc-specialty">Internal Medicine</span>
+                <div class="doc-rating"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i> <span>4.2</span></div>
+                <div class="doc-slots">
+                  <span class="slot available">12:00 PM</span>
+                  <span class="slot booked">2:30 PM</span>
+                  <span class="slot available">6:00 PM</span>
+                </div>
+              </div>
+              <button class="btn-book" onclick="openModal('book-modal')">Book</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ── EMERGENCY AI CHAT SECTION ── -->
+      <div class="dash-section" id="sec-emergency">
+        <div class="emergency-layout">
+          <div class="chat-panel">
+            <div class="chat-header">
+              <div class="chat-bot-info">
+                <div class="bot-avatar"><i class="fas fa-robot"></i></div>
+                <div>
+                  <strong>PawLife AI</strong>
+                  <small>Powered by Gemini · Always Online</small>
+                </div>
+              </div>
+              <div class="chat-status"><span class="online-dot"></span> Active</div>
+            </div>
+            <div class="quick-actions">
+              <button class="quick-btn" onclick="sendQuickMsg('My pet is vomiting')">🤢 Vomiting</button>
+              <button class="quick-btn" onclick="sendQuickMsg('My cat has low water intake')">🐈 Low Water Intake</button>
+              <button class="quick-btn" onclick="sendQuickMsg('My bird has feather loss and breathing issues')">🐦 Bird Breathing</button>
+              <button class="quick-btn" onclick="sendQuickMsg('My fish is gasping near the surface')">🐠 Oxygen Issue</button>
+            </div>
+            <div class="chat-messages" id="chat-messages">
+              <div class="msg bot">
+                <div class="msg-bubble">
+                  <strong>PawLife AI</strong>
+                  <p>Hello! 🐾 I'm your emergency vet assistant powered by Gemini AI. Share your pet type and symptoms for faster help. You can tap a quick action above or type your question below.</p>
+                </div>
+              </div>
+            </div>
+            <div class="chat-input-area">
+              <input type="text" id="chat-input" placeholder="Describe your pet's symptoms..." onkeydown="if(event.key==='Enter') sendMessage()" />
+              <button class="send-btn" onclick="sendMessage()"><i class="fas fa-paper-plane"></i></button>
+            </div>
+          </div>
+          <div class="emergency-sidebar">
+            <div class="emergency-card urgent">
+              <i class="fas fa-triangle-exclamation"></i>
+              <h4>Critical Emergency?</h4>
+              <p>If your pet is unconscious, gasping, or bleeding severely, call a vet immediately.</p>
+              <a href="tel:+911" class="btn-emergency-call">📞 Call Emergency Vet</a>
+            </div>
+            <div class="emergency-card">
+              <h4>Common Emergencies</h4>
+              <ul>
+                <li><i class="fas fa-circle-dot"></i> Difficulty breathing</li>
+                <li><i class="fas fa-circle-dot"></i> Uncontrolled bleeding</li>
+                <li><i class="fas fa-circle-dot"></i> Suspected poisoning</li>
+                <li><i class="fas fa-circle-dot"></i> Seizures</li>
+                <li><i class="fas fa-circle-dot"></i> Sudden paralysis</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </main>
+  </div>
+</div>
+
+
+<!-- ═══════════════════════════════════════════
+     MODALS
+═══════════════════════════════════════════ -->
+<div class="modal-overlay" id="add-pet-modal">
+  <div class="modal-box">
+    <div class="modal-header">
+      <h3>Add New Pet</h3>
+      <button onclick="closeModal('add-pet-modal')"><i class="fas fa-times"></i></button>
+    </div>
+    <div class="modal-body">
+      <div class="form-group"><label>Pet Name</label><input type="text" id="modal-pet-name" placeholder="e.g. Luna" /></div>
+      <div class="form-group"><label>Pet Type</label><select id="modal-pet-type" onchange="updateBreedOptions('modal-pet-type', 'modal-breed')"><option value="">Select Type</option><option value="dog">Dog</option><option value="cat">Cat</option><option value="bird">Bird</option><option value="rabbit">Rabbit</option><option value="fish">Fish</option></select></div>
+      <div class="form-group"><label>Breed</label><select id="modal-breed"><option value="">Select Breed</option></select></div>
+      <div class="form-group"><label>Birthdate (optional)</label><input type="date" id="modal-birthdate" /></div>
+      <div class="form-group"><label>Weight (kg)</label><input type="number" id="modal-weight" min="0.1" step="0.1" placeholder="e.g. 8.5" /></div>
+      <div class="form-group"><label>Gender</label>
+        <div class="gender-toggle">
+          <button type="button" class="gender-btn active" id="modal-g-male" onclick="selectModalGender('male')">♂ Male</button>
+          <button type="button" class="gender-btn" id="modal-g-female" onclick="selectModalGender('female')">♀ Female</button>
+          <button type="button" class="gender-btn" id="modal-g-unknown" onclick="selectModalGender('unknown')">Unknown</button>
+        </div>
+      </div>
+      <p id="modal-pet-error" class="text-sm" style="color:#f87171;display:none;"></p>
+    </div>
+    <div class="modal-footer"><button type="button" class="btn-submit" onclick="submitModalPet()">Add Pet</button></div>
+  </div>
+</div>
+
+<div class="modal-overlay" id="upgrade-modal">
+  <div class="modal-box">
+    <div class="modal-header">
+      <h3 id="upgrade-modal-title">Upgrade</h3>
+      <button type="button" onclick="closeModal('upgrade-modal')"><i class="fas fa-times"></i></button>
+    </div>
+    <div class="modal-body">
+      <p id="upgrade-modal-body" class="text-sm" style="margin:0;line-height:1.55;"></p>
+      <p id="upgrade-modal-hint" class="text-sm" style="margin:12px 0 0;opacity:0.85;"></p>
+    </div>
+    <div class="modal-footer" style="display:flex;flex-wrap:wrap;gap:10px;">
+      <button type="button" class="btn-add" onclick="applyUpgradeFromModal()">Upgrade (demo)</button>
+      <button type="button" class="btn-submit" style="background:var(--cream);color:var(--brown);border:1.5px solid var(--gray-lt);" onclick="goToSubscriptionFromUpgrade()">View plans</button>
+    </div>
+  </div>
+</div>
+
+<div class="modal-overlay" id="petmates-request-modal">
+  <div class="modal-box">
+    <div class="modal-header">
+      <h3>Request match</h3>
+      <button type="button" onclick="closeModal('petmates-request-modal')"><i class="fas fa-times"></i></button>
+    </div>
+    <div class="modal-body">
+      <p class="text-sm" style="margin:0 0 10px;"><strong>Your pet:</strong> <span id="pm-req-mypet"></span></p>
+      <p class="text-sm" style="margin:0 0 10px;"><strong>Match:</strong> <span id="pm-req-summary"></span></p>
+      <div class="form-group">
+        <label>Short note</label>
+        <textarea id="pm-req-note" rows="3" placeholder="Introduce your pet and what you are looking for…"></textarea>
+      </div>
+      <p class="text-sm" style="opacity:0.75;margin:0;">Saved locally only — demo, not sent to a real owner.</p>
+    </div>
+    <div class="modal-footer">
+      <button type="button" class="btn-submit" onclick="submitPetmatesRequest()">Send request</button>
+    </div>
+  </div>
+</div>
+
+<div class="modal-overlay" id="customize-diet-modal">
+  <div class="modal-box modal-box-wide">
+    <div class="modal-header">
+      <h3>Customize diet plan</h3>
+      <button type="button" onclick="closeModal('customize-diet-modal')"><i class="fas fa-times"></i></button>
+    </div>
+    <div class="modal-body modal-body-scroll" id="customize-diet-mount"></div>
+    <div class="modal-footer">
+      <button type="button" class="btn-submit" onclick="saveCustomizedDiet()">Save plan</button>
+    </div>
+  </div>
+</div>
+
+<div class="modal-overlay" id="book-modal">
+  <div class="modal-box">
+    <div class="modal-header">
+      <h3>Book Appointment</h3>
+      <button onclick="closeModal('book-modal')"><i class="fas fa-times"></i></button>
+    </div>
+    <div class="modal-body">
+      <div class="form-group"><label>Select Date</label><input type="date" /></div>
+      <div class="form-group"><label>Preferred Time</label><select><option>10:00 AM</option><option>2:00 PM</option><option>11:30 AM</option><option>3:00 PM</option></select></div>
+      <div class="form-group"><label>Reason for Visit</label><textarea placeholder="Briefly describe your concern..."></textarea></div>
+    </div>
+    <div class="modal-footer"><button class="btn-submit" onclick="closeModal('book-modal'); showBookingConfirm()">Confirm Booking</button></div>
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
