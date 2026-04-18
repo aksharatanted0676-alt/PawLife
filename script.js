@@ -1030,7 +1030,7 @@ function readDietsDb() {
 function getDietForPet(petId) {
   if (!petId) return null;
   const d = readDietsDb()[petId];
-  return d && typeof d === 'object' ? d : null;
+  return d && typeof d === 'object' ? d : null ;
 }
 
 function saveDietForPet(petId, diet) {
